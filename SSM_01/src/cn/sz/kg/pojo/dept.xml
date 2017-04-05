@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.sz.kg.pojo.Dept">
+
+	<select id="findall" parameterType="java.lang.Integer"  resultType="cn.sz.kg.pojo.Dept">
+		select deptno,dname,loc from dept where deptno=#{deptno}
+	
+	</select>
+
+	<select id="find"  resultType="cn.sz.kg.pojo.Dept">
+		select deptno,dname,loc from dept 
+	
+	</select>
+	
+	
+	<!-- <select id="findallDept" parameterType="java.lang.Integer" resultMap="deptinfo" >
+		select deptno,dname,loc from dept where deptno=#{deptno}
+	
+	</select>
+	<resultMap type="cn.sz.kg.pojo.Dept" id="deptinfo">
+		<id property="deptno" column="deptno"/>
+		<result property="dname" column="dname"/>
+		<result property="loc" column="loc"/>
+		<collection property="emps" column="deptno" javaType="java.util.ArrayList" ofType="cn.sz.kg.pojo.Emp" select="cn.sz.kg.dao.IEmpDao.findall"></collection>
+	
+	</resultMap> -->
+
+
+</mapper>
